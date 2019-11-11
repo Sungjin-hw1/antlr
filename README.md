@@ -3,9 +3,9 @@
 먼저, ANTLR4를 설치해야한다.
 아래 링크를 참고하여 eclipse기반의 ANTLR4 환경을 설치한다.
 
-[Eclipse 설치](https://github.com/jknack/antlr4ide)
+[Eclipse 설치(ANTLR4 IDE)](https://github.com/jknack/antlr4ide)
 
-[Antlr4 설치](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md)
+[ANTLR4 설치(JAR)](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md)
 
 
 아래 그림과 같이 ANTLR4 프로젝트를 생성한다.
