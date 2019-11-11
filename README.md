@@ -6,10 +6,21 @@
 소스코드를 clone 또는 download한 후,
 아래 그림과 같이 ANTLR4 프로젝트를 생성한다.
 
-![실행화면](./doc/images/프로젝트생성.png)
-![실행화면](./doc/images/ANTLR프로젝트선택.png)
+![프로젝트생성](./doc/images/프로젝트생성.png)
+![프로젝트선택](./doc/images/ANTLR프로젝트선택.png)
 
+프로젝트 생성을 완료하였다면,
+아래 그림과 동일하게 파일구성이 되도록 파일을 복사 및 붙여넣기한다.
 
+![프로젝트파일구성](./doc/images/프로젝트파일구성.png)
+
+프로젝트가 정상적으로 컴파일 및 동작하려면,
+추가로 프로젝트 환경설정을 해주어야 한다.
+아래 그림을 참고하여 프로젝트 환경설정을 해준다.
+
+![프로젝트파일구성](./doc/images/antlr_tool.png)
+![프로젝트파일구성](./doc/images/antlr4_jar추가.png)
+![프로젝트파일구성](./doc/images/project_facets.png)
 
 
 소스코드를 실행하면 아래 그림과 같이 ANTLR예제가 정상적으로 실행되는 것을 확인할 수 있다.
