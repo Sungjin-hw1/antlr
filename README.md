@@ -25,9 +25,10 @@ Eclipse 및 ANTLR4 설치가 완료되었으면,
 추가로 프로젝트 환경설정을 해주어야 한다.
 아래 그림을 참고하여 프로젝트 환경설정을 해준다.
 
+![프로젝트파일구성](./doc/images/project_facets.png)
 ![프로젝트파일구성](./doc/images/antlr_tool.png)
 ![프로젝트파일구성](./doc/images/antlr4_jar추가.png)
-![프로젝트파일구성](./doc/images/project_facets.png)
+
 
 
 소스코드를 실행하면 아래 그림과 같이 ANTLR예제가 정상적으로 실행되는 것을 확인할 수 있다.
