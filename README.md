@@ -8,6 +8,7 @@
 [ANTLR4 설치(JAR)](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md)
 
 
+Eclipse 및 ANTLR4 설치가 완료되었으면,
 아래 그림과 같이 ANTLR4 프로젝트를 생성한다.
 
 ![프로젝트생성](./doc/images/프로젝트생성.png)
