@@ -1,5 +1,10 @@
-# antlr
+# ANTLR4를 이용한 간단한 계산기 예제
 
-![Syntax_Diagram](./doc/images/Syntax_Diagram.png)
+소스코드를 실행하면 아래 그림과 같이 실행되는 것을 확인할 수 있다.
+![실행화면](./doc/images/실행화면.png)
+
+
 WHILE.g4에 대한 Syntax Diagram 화면이다.
+![Syntax_Diagram](./doc/images/Syntax_Diagram.png)
+
 
