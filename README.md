@@ -1,6 +1,6 @@
 ## ANTLR4를 이용한 간단한 계산기 예제
 
-#1. Eclipse 및 ANTLRL4 설치 
+# 1. Eclipse 및 ANTLRL4 설치 
 ANTLR4를 이용한 코드작성을 하려면 개발환경이 필요하다.
 ANTLR4를 지원하는 언어 및 개발환경은 C#, python 등 여러가지가 있는데,
 본 예제에서는 JAVA 기반의 환경을 활용하였다.
