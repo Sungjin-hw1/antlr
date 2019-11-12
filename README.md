@@ -49,7 +49,7 @@ Interpreter.java는 또한 main함수를 포함하고 있다.
 
 ![Syntax_Diagram](./doc/images/Syntax_Diagram.png)
 
-Eclipse에서 Syntax diagram창을 보려면 아래와 같이 설정해야한다.
+Eclipse에서 위의 Syntax diagram창은 다음과 같이 설정하여 활성화할 수 있다.
 
 ![Syntax_Diagram](./doc/images/syntax_diagram창_설정1.png)
 ![Syntax_Diagram](./doc/images/syntax_diagram창_설정2.png)
