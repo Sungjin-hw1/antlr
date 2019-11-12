@@ -27,7 +27,7 @@ Eclipse 및 ANTLR4 설치 후, 아래 그림과 같이 새로운 ANTLR4 프로�
 
 ## 4. 계산기 예제 프로젝트 구현
 github repository에 올려둔 소스코드의 "WHILE.g4" 와 같이 코드를 작성하여 컴파일하면,
-아래의 그림처럼 "src" 하위로 "generated" 폴더가 생성되면서 자동으로 JAVA파일들이 생성된다.
+아래의 그림처럼 "src" 하위로 "generated" 폴더가 생성되면서 자동으로 JAVA, interp, tokens 등의 파일이 생성된다.
 이때, 앞서 언급한 "2. ANTLR4 컴파일 및 실행환경 설정"에서 ANTLR4>TOOL 의 경로설정이 "./src/" 로 되어있어야 설명처럼 동작한다.
 
 예제의 WHILE.g4는 전역 MAP을 활용하기 위해서 Interpreter.java를 import하도록 구현되었다.
