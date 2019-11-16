@@ -10,19 +10,19 @@ JAVA 및 ANTLR4를 활용하기 위한 환경설치를 위하여 아래 링크�
 
 [최신 ANTLR4 설치(JAR)](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md)
 
-## 2. ANTLR4 컴파일 및 실행환경 설정
-프로젝트가 정상적으로 컴파일 및 동작하려면,
+## 2. ANTLR4 프로젝트 새로 생성
+Eclipse 및 ANTLR4 설치 후, 아래 그림과 같이 새로운 ANTLR4 프로젝트를 생성한다.
+
+![프로젝트생성](./doc/images/프로젝트생성.png)
+![프로젝트선택](./doc/images/ANTLR프로젝트선택.png)
+
+## 3. ANTLR4 컴파일 및 실행환경 설정
+ANTLR4 프로젝트로 생성하여 JAVA 컴파일러로 컴파일 및 동작시키려면,
 추가로 몇가지 프로젝트 환경설정을 해주어야 한다.
 아래 그림을 참고하여 프로젝트 환경설정을 해준다.
 
 ![프로젝트파일구성](./doc/images/antlr_tool.png)
 ![프로젝트파일구성](./doc/images/antlr4_jar추가.png)
-
-## 3. ANTLR4 프로젝트 새로 생성
-Eclipse 및 ANTLR4 설치 후, 아래 그림과 같이 새로운 ANTLR4 프로젝트를 생성한다.
-
-![프로젝트생성](./doc/images/프로젝트생성.png)
-![프로젝트선택](./doc/images/ANTLR프로젝트선택.png)
 ![프로젝트파일구성](./doc/images/project_facets.png)
 
 ## 4. 계산기 예제 프로젝트 구현
