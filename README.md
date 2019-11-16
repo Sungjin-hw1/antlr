@@ -29,7 +29,7 @@ Eclipse 및 ANTLR4 설치 후, 아래 그림과 같이 새로운 ANTLR4 프로�
 github repository에 올려둔 소스코드의 "WHILE.g4" 와 같이 코드를 작성하여 컴파일하면,
 아래의 그림처럼 "src" 하위로 "generated" 폴더가 생성되면서 자동으로 JAVA, interp, tokens 등의 파일이 생성된다.
 
-'''
+'''java
 grammar WHILE;
 
 @header {
