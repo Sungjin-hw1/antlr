@@ -5,7 +5,7 @@ grammar WHILE;
 
 @header {
 	package generated;
-	import hw1.Interpreter;
+	import main.StateToInt;
 }
 
 program : aexpr;
@@ -19,7 +19,7 @@ aexpr returns [int sv]
 	| IDENT
 	{
 		String id = $IDENT.getText();
-		$sv = (Interpreter.get(id));
+		$sv = (StateToInt.get(id));
 	}
 	| a1=aexpr '*' a2=aexpr
 	{$sv = ($a1.sv * $a2.sv); }

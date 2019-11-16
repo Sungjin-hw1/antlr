@@ -1,7 +1,7 @@
 // Generated from WHILE.g4 by ANTLR 4.7.2
 
 	package generated;
-	import hw1.Interpreter;
+	import main.StateToInt;
 
 
 import org.antlr.v4.runtime.ParserRuleContext;

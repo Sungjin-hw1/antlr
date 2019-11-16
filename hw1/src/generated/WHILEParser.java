@@ -1,7 +1,7 @@
 // Generated from WHILE.g4 by ANTLR 4.7.2
 
 	package generated;
-	import hw1.Interpreter;
+	import main.StateToInt;
 
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -193,7 +193,7 @@ public class WHILEParser extends Parser {
 				((AexprContext)_localctx).IDENT = match(IDENT);
 
 						String id = ((AexprContext)_localctx).IDENT.getText();
-						((AexprContext)_localctx).sv =  (Interpreter.get(id));
+						((AexprContext)_localctx).sv =  (StateToInt.get(id));
 					
 				}
 				break;
