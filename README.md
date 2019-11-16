@@ -65,7 +65,7 @@ IDENT  :   [x] ;
 WS  :   [ \t\r\n]+ -> skip ; 
 ```
 
-이때, 앞서 언급한 "2. ANTLR4 컴파일 및 실행환경 설정"에서 ANTLR4>TOOL 의 경로설정이 "./src/" 로 되어있어야 설명처럼 동작한다.
+이때, 앞서 언급한 "2. ANTLR4 컴파일 및 실행환경 설정"에서 ANTLR4>TOOL 의 경로설정이 "./src/" 로 되어있어야 WHILE.g4에 의해 자동생성되는 파일들이 "src" 하위의 "generated" 패키지로 저장된다.
 
 예제의 WHILE.g4는 전역 MAP을 활용하기 위해서 "src/main/" 패키지의 StateToInt.java를 import하도록 구현되었다.
 
