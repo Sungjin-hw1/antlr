@@ -22,8 +22,8 @@ ANTLR4 프로젝트로 생성하여 JAVA 컴파일러로 컴파일 및 동작시
 아래 그림을 참고하여 프로젝트 환경설정을 해준다.
 
 ![프로젝트파일구성](./doc/images/antlr_tool.png)
-![프로젝트파일구성](./doc/images/antlr4_jar추가.png)
 ![프로젝트파일구성](./doc/images/project_facets.png)
+![프로젝트파일구성](./doc/images/antlr4_jar추가.png)
 
 ## 4. 계산기 예제 프로젝트 구현
 github repository에 올려둔 소스코드의 "WHILE.g4" 와 같이 코드를 작성하여 컴파일하면, "src" 하위로 "generated" 패키지가 생성되면서 자동으로 JAVA, interp, tokens 등의 파일이 생성된다.
