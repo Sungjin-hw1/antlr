@@ -118,14 +118,14 @@ public class Interpreter {
 		WHILEParser parser = new WHILEParser( tokens );
 		ParseTree tree = parser.program();
 		ParseTreeWalker walker = new ParseTreeWalker();
-	    walker.walk( new WHILEWalker(), tree );
+	    	walker.walk( new WHILEWalker(), tree );
 	}
 
 }
 ```
 
 마지막으로 계산기 예제코드의 연산결과를 출력하기위하여,
-"src/hw1" 하위로 WHILEWalker.java를 구현하였다.
+"src/main" 패키지에 WHILEWalker.java를 구현하였다.
 
 ### [WHILEWalker.java]
 ```java
