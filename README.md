@@ -2,7 +2,7 @@
 
 ## 1. Eclipse 및 ANTLRL4 설치 
 ANTLR4를 이용한 코드작성을 하려면 개발환경이 필요하다.
-ANTLR4를 지원하는 언어 및 개발환경은 C#, python 등 여러가지가 있는데,
+ANTLR4를 지원하는 언어 및 개발환경은 JAVA, C#, python 등 여러가지가 있는데,
 본 예제에서는 JAVA 기반의 환경을 활용하였다.
 JAVA 및 ANTLR4를 활용하기 위한 환경설치를 위하여 아래 링크를 참고하였다.
 
@@ -27,6 +27,8 @@ Eclipse 및 ANTLR4 설치 후, 아래 그림과 같이 새로운 ANTLR4 프로�
 
 ## 4. 계산기 예제 프로젝트 구현
 github repository에 올려둔 소스코드의 "WHILE.g4" 와 같이 코드를 작성하여 컴파일하면, "src" 하위로 "generated" 패키지가 생성되면서 자동으로 JAVA, interp, tokens 등의 파일이 생성된다.
+
+![프로젝트파일구성](./doc/images/프로젝트파일구성.png)
 
 ### [WHILE.g4]
 ```antlr
@@ -116,14 +118,14 @@ public class Interpreter {
 		WHILEParser parser = new WHILEParser( tokens );
 		ParseTree tree = parser.program();
 		ParseTreeWalker walker = new ParseTreeWalker();
-	    walker.walk( new WHILEWalker(), tree );
+	    	walker.walk( new WHILEWalker(), tree );
 	}
 
 }
 ```
 
 마지막으로 계산기 예제코드의 연산결과를 출력하기위하여,
-"src/hw1" 하위로 WHILEWalker.java를 구현하였다.
+"src/main" 패키지에 WHILEWalker.java를 구현하였다.
 
 ### [WHILEWalker.java]
 ```java
@@ -138,8 +140,6 @@ public class WHILEWalker extends WHILEBaseListener {
 	}
 }
 ```
-
-![프로젝트파일구성](./doc/images/프로젝트파일구성.png)
 
 ## 5. 계산기 예제 동작 화면
 모든 설정이 정상적으로 완료되었다면,
