@@ -15,7 +15,6 @@ JAVA 및 ANTLR4를 활용하기 위한 환경설치를 위하여 아래 링크�
 추가로 몇가지 프로젝트 환경설정을 해주어야 한다.
 아래 그림을 참고하여 프로젝트 환경설정을 해준다.
 
-![프로젝트파일구성](./doc/images/project_facets.png)
 ![프로젝트파일구성](./doc/images/antlr_tool.png)
 ![프로젝트파일구성](./doc/images/antlr4_jar추가.png)
 
@@ -24,18 +23,121 @@ Eclipse 및 ANTLR4 설치 후, 아래 그림과 같이 새로운 ANTLR4 프로�
 
 ![프로젝트생성](./doc/images/프로젝트생성.png)
 ![프로젝트선택](./doc/images/ANTLR프로젝트선택.png)
+![프로젝트파일구성](./doc/images/project_facets.png)
 
 ## 4. 계산기 예제 프로젝트 구현
-github repository에 올려둔 소스코드의 "WHILE.g4" 와 같이 코드를 작성하여 컴파일하면,
-아래의 그림처럼 "src" 하위로 "generated" 폴더가 생성되면서 자동으로 JAVA, interp, tokens 등의 파일이 생성된다.
+github repository에 올려둔 소스코드의 "WHILE.g4" 와 같이 코드를 작성하여 컴파일하면, "src" 하위로 "generated" 패키지가 생성되면서 자동으로 JAVA, interp, tokens 등의 파일이 생성된다.
+
+### [WHILE.g4]
+```antlr
+grammar WHILE;
+
+@header {
+	package generated;
+	import main.StateToInt;
+}
+
+program : aexpr;
+
+aexpr returns [int sv] 
+	: N
+	{
+		String n = $N.getText();
+		$sv = Integer.parseInt(n);
+	}
+	| IDENT
+	{
+		String id = $IDENT.getText();
+		$sv = (StateToInt.get(id));
+	}
+	| a1=aexpr '*' a2=aexpr
+	{$sv = ($a1.sv * $a2.sv); }
+	| a1= aexpr '+' a2=aexpr
+	{$sv = ($a1.sv + $a2.sv);}
+	| a1=aexpr '-' a2=aexpr
+	{$sv = ($a1.sv - $a2.sv); }
+	;
+	
+N :   [0-9]+ ;
+IDENT  :   [x] ;
+WS  :   [ \t\r\n]+ -> skip ; 
+```
+
 이때, 앞서 언급한 "2. ANTLR4 컴파일 및 실행환경 설정"에서 ANTLR4>TOOL 의 경로설정이 "./src/" 로 되어있어야 설명처럼 동작한다.
 
-예제의 WHILE.g4는 전역 MAP을 활용하기 위해서 Interpreter.java를 import하도록 구현되었다.
-따라서, 아래 그림처럼 "src/hw1" 하위로 Interpreter.java를 추가해 주어야 WHILE.g4가 정상적으로 컴파일된다.
-Interpreter.java는 또한 main함수를 포함하고 있다.
+예제의 WHILE.g4는 전역 MAP을 활용하기 위해서 "src/main/" 패키지의 StateToInt.java를 import하도록 구현되었다.
+
+### [StateToInt.java]
+```java
+package main;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class StateToInt {
+	static public Map<String, Integer> mapForIDENT = new HashMap<String, Integer>()
+	{
+		{
+			put("x", 70);
+		}
+	};
+	
+	static public int get(String id)
+	{
+		return mapForIDENT.get(id);
+	}
+}
+```
+
+"src/main" 패키지의 Interpreter.java는 main함수를 포함하고 있다.
+
+### [Interpreter.java]
+```java
+package main;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.HashMap; 
+
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
+
+import generated.*;
+
+public class Interpreter {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		CharStream codeCharStream =
+				CharStreams.fromFileName("test.wh");
+		WHILELexer lexer = new WHILELexer( codeCharStream);
+		CommonTokenStream tokens = new CommonTokenStream( lexer );
+		WHILEParser parser = new WHILEParser( tokens );
+		ParseTree tree = parser.program();
+		ParseTreeWalker walker = new ParseTreeWalker();
+	    walker.walk( new WHILEWalker(), tree );
+	}
+
+}
+```
 
 마지막으로 계산기 예제코드의 연산결과를 출력하기위하여,
 "src/hw1" 하위로 WHILEWalker.java를 구현하였다.
+
+### [WHILEWalker.java]
+```java
+package main;
+
+import generated.*;
+
+public class WHILEWalker extends WHILEBaseListener {
+
+	public void exitAexpr(WHILEParser.AexprContext ctx) {
+	    System.out.println( "Exiting Aexpr" + ctx.sv );
+	}
+}
+```
 
 ![프로젝트파일구성](./doc/images/프로젝트파일구성.png)
 
